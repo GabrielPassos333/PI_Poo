@@ -7,6 +7,7 @@ public class TestandoTrens {
   Sala s = new piteste.Sala();
   Curso c = new piteste.Curso();
   Materia m = new piteste.Materia();
+  Horario h = new piteste.Horario();
 
   //s.adicionarSala("Mini Auditorio", 100);
   //s.deletarSala(5);
@@ -28,7 +29,9 @@ public class TestandoTrens {
 
   //m.adicionarMateria("POO", 1, 3);
   //m.deletarMateria(5);
-  m.listarMaterias();
+  //m.listarMaterias();
+
+  h.listarHorarios();
 
   }
 

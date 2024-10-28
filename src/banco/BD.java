@@ -26,7 +26,7 @@ public class BD {
 			Class.forName(DRIVER);
 			//System.out.println("Driver carregado");
 			con = DriverManager.getConnection(URL,LOGIN,SENHA);
-			System.out.println("Conectou...");
+			//System.out.println("Conectou...");
 			return true;
 		}
 		catch(ClassNotFoundException erro) {
@@ -50,7 +50,7 @@ public class BD {
 		catch(SQLException e) {}
 		try {
 			if(con!=null) {
-				System.out.println("Desconectou...");
+				//System.out.println("Desconectou...");
 				con.close();
 			}
 		}
