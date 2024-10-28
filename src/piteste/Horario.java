@@ -102,4 +102,27 @@ public class Horario {
       }
     }
   }
+
+  public void adicionarHorario(String dia_semana, int semestre, int id_sala, int id_materia, int id_prof) {
+    BD bd = new BD();
+
+    if (bd.getConnection()) {
+      String sql = "insert into horario (dia_semana, semestre, id_sala, id_materia, id_prof) values (?, ?, ?, ?, ?)";
+
+      try {
+        bd.st = bd.con.prepareStatement(sql);
+        bd.st.setString(1, dia_semana);
+        bd.st.setInt(2, semestre);
+        bd.st.setInt(3, id_sala);
+        bd.st.setInt(4, id_materia);
+        bd.st.setInt(5, id_prof);
+        bd.st.executeUpdate();
+        System.out.println("Horario adicionado com sucesso!");
+      } catch (SQLException erro) {
+        System.out.println(erro);
+      } finally {
+        bd.close(); // fecha a conexão
+      }
+    }
+  }
 }
