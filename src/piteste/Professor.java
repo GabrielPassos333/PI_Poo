@@ -97,6 +97,11 @@ public class Professor {
 			}
   	}
 
+		/**
+		 * Atualiza o nome de um professor no banco de dados
+		 * @param id do professor
+		 * @param nome do professor
+		 */
 		public void atualizarProfessor(int id, String nome) {
 			BD bd = new BD();
 

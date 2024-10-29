@@ -9,27 +9,34 @@ public class TestandoTrens {
   Materia m = new piteste.Materia();
   Horario h = new piteste.Horario();
 
-  //s.adicionarSala("Mini Auditorio", 100);
+  //s.adicionarSala("Lab 13", 50);
   //s.deletarSala(5);
   //s.atualizarSala(4, "Sala 103", 666);
   //s.listarSalas();
   
-  //p.adicionarProfessor("-");
-  //p.deletarProfessor(9);
+  System.out.println("-----------------------------------------------");
+  //p.adicionarProfessor("Daniele Canhedos");
+  //p.deletarProfessor(10);
+  //p.atualizarProfessor(4, "Claus");
+  //p.atualizarIdProfessor(11,5 );
   p.listarProfessores();
 
+  System.out.println("-----------------------------------------------");
   //c.adicionarCurso("-");
-  //c.atualizarCurso(3, "Engenharia de Software");
+  //c.atualizarCurso(1, "ADS");
   //c.deletarCurso(3);
   //c.atualizarIdCurso(4, 3);
   c.listarCursos();
 
-
+  System.out.println("-----------------------------------------------");
   //m.adicionarMateria("POO", 1, 3);
+  //m.atualizarMateria(1,"Matematica Discreta", 1, 1);
   //m.deletarMateria(5);
-  //m.listarMaterias();
+  m.listarMaterias();
 
-  //h.listarHorarios();
+  System.out.println("-----------------------------------------------");
+  
+  h.listarHorarios();
 
   }
 

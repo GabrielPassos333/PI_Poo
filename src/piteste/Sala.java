@@ -1,7 +1,6 @@
 package piteste;
 
 import java.sql.SQLException;
-
 import banco.BD;
 
 public class Sala {

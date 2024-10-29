@@ -77,6 +77,9 @@ public class Horario {
            ", id_sala=" + id_sala + ", id_materia=" + id_materia + ", id_prof=" + id_prof + "]";
   }
 
+  /**
+   * Lista todos os horarios do banco de dados
+   */
   public void listarHorarios() {
     BD bd = new BD();
 
@@ -103,6 +106,14 @@ public class Horario {
     }
   }
 
+  /**
+   * Adiciona um horario no banco de dados
+   * @param dia_semana inserir o dia da semana
+   * @param semestre inserir o semestre
+   * @param id_sala inserir o id da sala
+   * @param id_materia inserir o id da materia
+   * @param id_prof inserir o id do professor
+   */
   public void adicionarHorario(String dia_semana, int semestre, int id_sala, int id_materia, int id_prof) {
     BD bd = new BD();
 
