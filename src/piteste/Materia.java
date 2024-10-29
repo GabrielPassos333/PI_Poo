@@ -107,7 +107,37 @@ public class Materia {
       System.out.println("Falha ao conectar");
     }
   }
+
   
+  public void atualizarMateria(int id, String nome, int id_prof, int id_curso, String diaSemana, int semestre) {
+    BD bd = new BD();
+
+    if(bd.getConnection()) {
+      String sql = "update materia set nome = ?, id_prof = ?, id_curso = ?, dia_semana = ?, semestre = ? where id_materia = ?";
+      try {
+        bd.st = bd.con.prepareStatement(sql);
+        bd.st.setString(1, nome);
+        bd.st.setInt(2, id_prof);
+        bd.st.setInt(3, id_curso);
+        bd.st.setString(4, diaSemana);
+        bd.st.setInt(5, semestre);
+        bd.st.setInt(6, id);
+        bd.st.executeUpdate();
+        System.out.println("Matéria atualizada com sucesso");
+      } 
+      catch (SQLException erro) {
+        System.out.println(erro);
+        System.out.println("Falha ao atualizar matéria");
+      } 
+      finally {
+        bd.close(); //fecha a conexão
+      }
+    }
+    else {
+      System.out.println("Falha ao conectar");
+    }
+  }
+
   /**
    * Deleta uma matéria do banco de dados
    * @param id da matéria

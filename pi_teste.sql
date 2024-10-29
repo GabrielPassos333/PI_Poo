@@ -115,6 +115,10 @@ SELECT
         WHEN 2 THEN '19:50-20:40'
         WHEN 3 THEN '20:50-21:40'
         WHEN 4 THEN '21:40-22:30'
+		WHEN 5 THEN '09:30-10:20'
+		WHEN 6 THEN '10:20-11:10'
+		WHEN 7 THEN '11:20-12:10'
+		WHEN 8 THEN '12:10-13:00'
         ELSE 'Horário desconhecido'
     END AS horario
 FROM 
@@ -129,4 +133,34 @@ ORDER BY
     prof.nome, horario.id_horario;
 
 -----------------------------------
+
+SELECT 
+    CASE horario.id_horario
+        WHEN 1 THEN '19:00-19:50'
+        WHEN 2 THEN '19:50-20:40'
+        WHEN 3 THEN '20:50-21:40'
+        WHEN 4 THEN '21:40-22:30'
+        WHEN 5 THEN '09:30-10:20'
+        WHEN 6 THEN '10:20-11:10'
+        WHEN 7 THEN '11:20-12:10'
+        WHEN 8 THEN '12:10-13:00'
+        ELSE 'Horário desconhecido'
+    END AS horario,
+    prof.nome AS professor,
+    mat.nome AS materia,
+    sala.nome AS sala
+FROM 
+    Horario horario
+JOIN 
+    Prof prof ON horario.id_prof = prof.id_prof
+JOIN 
+    Materia mat ON horario.id_materia = mat.id_materia
+JOIN 
+    Sala sala ON horario.id_sala = sala.id_sala
+ORDER BY 
+    horario.id_horario, prof.nome;
+
+----------------------------
+select * from materia
 select * from horario
+
